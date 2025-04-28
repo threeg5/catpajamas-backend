@@ -17,11 +17,11 @@ let latestImageBuffer = null;
 
 app.get("/generate-nft", async (req, res) => {
   try {
-    const response = await openai.images.create({
-      model: "dall-e-3",
-      prompt: "A cartoonish cat wearing vibrant, gaudy pajamas in a circular logo design...",
-      n: 1,
-      size: "1024x1024",
+    const response = await openai.images.generate({
+  model: "dall-e-3",
+  prompt: "A cartoonish cat wearing vibrant, gaudy pajamas in a circular logo design...",
+  n: 1,
+  size: "1024x1024",
     });
 
     const imageUrl = response.data[0].url;
